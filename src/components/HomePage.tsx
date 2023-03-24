@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 // Api
-
+import {useGetCryptoQuery} from "../services/cryptoApi";
 
 
 // Deconstruction
@@ -18,7 +18,7 @@ const {Title} = Typography;
 
 
 const HomePage = () => {
-
+    // const { data, isFetching } = useGetCryptoQuery();
 
   return (
     <div>

@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
+import store from "./app/store"
+
 
 
 
@@ -18,11 +20,11 @@ const root = createRoot(container);
 
 
 root.render(
-  // <Router>
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-  // </Router>
+    <Provider store={store}>
+      <React.StrictMode>
+          <App />
+      </React.StrictMode>
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

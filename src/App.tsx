@@ -18,6 +18,7 @@ import "./styles/App.scss";
 import {NavBar, Exchanges, HomePage, CryptoCurrencies, News, CryptoDetails} from "./components";
 import {Layout, Typography, Space} from "antd";
 
+
 // Redux
 import { Provider } from "react-redux";
 
@@ -41,7 +42,6 @@ function App() {
             <div className='main'>
               <Layout>
                 <div className='routes'>
-                  {/* <h1>hello</h1> */}
                   <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/cryptocurrencies" element={<CryptoCurrencies />} />
