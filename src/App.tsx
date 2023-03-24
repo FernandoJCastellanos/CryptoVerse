@@ -1,57 +1,72 @@
+// Environment
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import AppContextProvider from "./AppContext";
+
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+// CSS
+import "./styles/App.scss";
+
+
+// Components
+import {NavBar, Exchanges, HomePage, CryptoCurrencies, News, CryptoDetails} from "./components";
+import {Layout, Typography, Space} from "antd";
+
+// Redux
+import { Provider } from "react-redux";
+
+
+
+
+
+
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <AppContextProvider>
+      <Router>
+          <div className='app'>
+            <div className='navbar'>
+              <NavBar />
+            </div>
+            <div className='main'>
+              <Layout>
+                <div className='routes'>
+                  {/* <h1>hello</h1> */}
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/cryptocurrencies" element={<CryptoCurrencies />} />
+                    <Route path="/exchanges" element={<Exchanges />} />
+                    <Route path="/crypto/:coinId" element={<CryptoDetails />} />
+                    <Route path="/news" element={<News />} />
+                  </Routes>
+                </div>
+              </Layout>
+            
+              <div className='footer' >
+                <Typography.Title level={5} style={{color : "white" , textAlign: "center"}}>
+                  Cryptoverse <br />
+                  All rights reserved
+                </Typography.Title>
+                <Space >
+                  <Link to="/"> Home </Link>
+                  <Link to="/exchanges"> Exchanges </Link>
+                  <Link to="/news"> News </Link>
+                </Space>
+              </div>
+            </div>
+          </div>
+      </Router>
+    </AppContextProvider>
   );
 }
 
