@@ -15,7 +15,7 @@ import "./styles/App.scss";
 
 
 // Components
-import {NavBar, Exchanges, HomePage, CryptoCurrencies, News, CryptoDetails} from "./components";
+import {NavBar, HomePage, CryptoCurrencies, News, CryptoDetails} from "./components";
 import {Layout, Typography, Space} from "antd";
 
 
@@ -34,7 +34,6 @@ function App() {
 
   return (
     <AppContextProvider>
-      <Router>
           <div className='app'>
             <div className='navbar'>
               <NavBar />
@@ -44,10 +43,10 @@ function App() {
                 <div className='routes'>
                   <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/cryptocurrencies" element={<CryptoCurrencies />} />
-                    <Route path="/exchanges" element={<Exchanges />} />
+                    <Route path="/cryptocurrencies" element={<CryptoCurrencies simplified={false} />} />
+                    <Route path="https://coinranking.com/" />
                     <Route path="/crypto/:coinId" element={<CryptoDetails />} />
-                    <Route path="/news" element={<News />} />
+                    <Route path="/news" element={<News simplified={false} />} />
                   </Routes>
                 </div>
               </Layout>
@@ -65,7 +64,6 @@ function App() {
               </div>
             </div>
           </div>
-      </Router>
     </AppContextProvider>
   );
 }
