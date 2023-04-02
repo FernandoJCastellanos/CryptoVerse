@@ -1,6 +1,6 @@
 // Environment
 import React, {useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // CSS
 
@@ -21,6 +21,22 @@ const NavBar = () => {
     const [activeMenu, setActiveMenu] = useState(true)
     const [screenSize, setScreenSize] = useState<any>(null)
 
+
+
+
+    const location = useLocation();
+    const [activeMenuItem, setActiveMenuItem] = useState('Home');
+  
+    useEffect(() => {
+      const path = location.pathname;
+      setActiveMenuItem(path === '/' ? 'Home' : path.slice(1));
+    }, [location]);
+
+
+
+
+
+    
 
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth)
@@ -58,17 +74,17 @@ const NavBar = () => {
 
         {activeMenu && (
 
-        <Menu theme="dark">
-            <Menu.Item icon={<HomeOutlined />} >
-                <Link to="/">Home</Link>
+        <Menu theme="dark" selectedKeys={[activeMenuItem]}>
+            <Menu.Item icon={<HomeOutlined />} key="Home">
+                <Link to="/" >Home</Link>
             </Menu.Item>
-            <Menu.Item icon={<FundOutlined />} >
+            <Menu.Item icon={<FundOutlined />} key="cryptocurrencies">
                 <Link to="/cryptocurrencies">CryptoCurrencies</Link>
             </Menu.Item>
-            <Menu.Item icon={<MoneyCollectOutlined />} >
+            <Menu.Item icon={<MoneyCollectOutlined />} key="Exchanges">
                 <Link to="https://coinranking.com/" target="_blank">Exchanges</Link>
             </Menu.Item>
-            <Menu.Item icon={<BulbOutlined />} >
+            <Menu.Item icon={<BulbOutlined />} key="news">
                 <Link to="/news">News</Link>
             </Menu.Item>
         </Menu>

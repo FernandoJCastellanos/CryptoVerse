@@ -24,21 +24,12 @@ const AppContextProvider = (props: any) => {
     // Logic     // Logic     // Logic    // Logic    // Logic
 
 
-    const [setSimplified, setSetSimplified] = useState(true);
-    const location = useLocation();
-  
-    useEffect(() => {
-      if (location.pathname === '/') {
-        setSetSimplified(true);
-      } else if (location.pathname === '/cryptocurrencies') {
-        setSetSimplified(false);
-      }
-    }, [location.pathname]);
+ 
 
  
     const love = <h1>love</h1>
 
-    const contextValue: any = {love, setSimplified};
+    const contextValue: any = {love, };
 
 
 
