@@ -41,7 +41,7 @@ function App() {
             <div className='main'>
               <Layout>
                 <div className='routes'>
-                  <Routes>
+                  <Routes >
                     <Route path="/" element={<HomePage />} />
                     <Route path="/cryptocurrencies" element={<CryptoCurrencies simplified={false} />} />
                     <Route path="https://coinranking.com/" />

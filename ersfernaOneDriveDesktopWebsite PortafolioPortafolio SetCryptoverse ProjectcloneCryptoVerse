@@ -1,0 +1,29 @@
+[33mcommit 90a5dab42bfc7982aa84412475d6049c40bbd202[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: FernandoJC <fernandojcastellanos@gmail.com>
+Date:   Sun Apr 2 10:29:11 2023 -0400
+
+    fixing navbar active tabs
+
+[33mcommit 34a806d0a1409b419d5bdc88f3fa4bedb59d40a3[m
+Author: FernandoJC <fernandojcastellanos@gmail.com>
+Date:   Fri Mar 31 12:41:24 2023 -0400
+
+    first commit to Github
+
+[33mcommit 1cdd9db9ca1e0e9aae5c0bd9d57119c14150df93[m
+Author: FernandoJC <fernandojcastellanos@gmail.com>
+Date:   Fri Mar 24 14:08:59 2023 -0400
+
+    commit before using API
+
+[33mcommit 8a9f562f6f807c2eda80ff546675012ca93fe149[m
+Author: FernandoJC <fernandojcastellanos@gmail.com>
+Date:   Fri Mar 24 13:27:33 2023 -0400
+
+    initial commit after shitfest 1
+
+[33mcommit 394832b3e74d36f3d25dd4d87ada69e73e64a4d6[m
+Author: FernandoJC <fernandojcastellanos@gmail.com>
+Date:   Fri Mar 24 12:38:32 2023 -0400
+
+    Initialize project using Create React App
